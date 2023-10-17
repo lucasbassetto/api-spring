@@ -1,4 +1,4 @@
-package med.voll.api.entity.endereco;
+package med.voll.api.dto.endereco;
 
 public record DadosEndereco(String logradouro,
                             String bairro,
