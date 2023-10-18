@@ -2,6 +2,7 @@ package med.voll.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import med.voll.api.dto.medico.DadosAtualizacaoMedico;
 import med.voll.api.dto.medico.DadosCadastroMedico;
 import med.voll.api.dto.medico.DadosListagemMedico;
 import med.voll.api.entity.Medico;
@@ -30,5 +31,12 @@ public class MedicoController {
     public Page<DadosListagemMedico> listar(Pageable paginacao) {
         return repository.findAll(paginacao)
                 .map(DadosListagemMedico::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados) {
+        Medico medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
     }
 }
