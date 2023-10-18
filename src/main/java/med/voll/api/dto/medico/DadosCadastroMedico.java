@@ -11,6 +11,7 @@ import med.voll.api.entity.enums.Especialidade;
 public record DadosCadastroMedico(
         @NotBlank
         String nome,
+
         @NotBlank
         @Email
         String email,
