@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.dto.medico.DadosCadastroMedico;
+import med.voll.api.dto.medico.DadosListagemMedico;
 import med.voll.api.entity.enums.Especialidade;
 
 @Entity
